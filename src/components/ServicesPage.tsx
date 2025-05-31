@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Code, Server, Mail, Globe, Check, Star } from 'lucide-react';
+import { Code, Server, Mail, Globe, Check, Star, Gamepad2 } from 'lucide-react';
 
 interface ServicesPageProps {
   onPageChange: (page: string) => void;
@@ -61,8 +60,21 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ onPageChange }) => {
         "Scalable Resources",
         "DDoS Protection",
         "24/7 Technical Support"
+      ]
+    },
+    {
+      icon: <Gamepad2 className="w-12 h-12" />,
+      title: "Game Server Hosting",
+      description: "Dedicated gaming servers for ultimate performance",
+      features: [
+        "Low Latency Gaming",
+        "Popular Game Support",
+        "Instant Setup",
+        "Custom Configurations",
+        "Anti-DDoS Protection",
+        "24/7 Game Support"
       ],
-      highlight: "Enterprise"
+      highlight: "Gaming"
     }
   ];
 
@@ -80,7 +92,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ onPageChange }) => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
             <Card key={index} className="vevilo-card vevilo-hover relative overflow-hidden">
               {service.highlight && (

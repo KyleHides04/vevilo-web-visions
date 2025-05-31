@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Server, Mail, Globe, Star, Users, Zap, Shield } from 'lucide-react';
+import { Code, Server, Mail, Globe, Star, Users, Zap, Shield, Gamepad2 } from 'lucide-react';
 
 interface HomePageProps {
   onPageChange: (page: string) => void;
@@ -16,6 +15,11 @@ const HomePage: React.FC<HomePageProps> = ({ onPageChange }) => {
       description: "Custom websites built with modern technologies"
     },
     {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Website Hosting",
+      description: "Fast, reliable hosting packages"
+    },
+    {
       icon: <Server className="w-8 h-8" />,
       title: "VPS Hosting",
       description: "High-performance virtual private servers"
@@ -26,9 +30,9 @@ const HomePage: React.FC<HomePageProps> = ({ onPageChange }) => {
       description: "Professional email solutions for your business"
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Website Hosting",
-      description: "Fast, reliable hosting packages"
+      icon: <Gamepad2 className="w-8 h-8" />,
+      title: "Game Server Hosting",
+      description: "Dedicated gaming servers for optimal performance"
     }
   ];
 
@@ -112,7 +116,7 @@ const HomePage: React.FC<HomePageProps> = ({ onPageChange }) => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="vevilo-card vevilo-hover group cursor-pointer">
                 <CardContent className="p-8 text-center">
