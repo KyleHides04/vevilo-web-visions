@@ -8,6 +8,7 @@ import PricingPage from '@/components/PricingPage';
 import ContactPage from '@/components/ContactPage';
 import ClientPortal from '@/components/ClientPortal';
 import AdminDashboard from '@/components/AdminDashboard';
+import StaffDashboard from '@/components/StaffDashboard';
 
 const Index = () => {
   const [currentPage, setCurrentPage] = React.useState('home');
@@ -28,12 +29,14 @@ const Index = () => {
         return <ClientPortal onPageChange={setCurrentPage} />;
       case 'dashboard':
         return <AdminDashboard onPageChange={setCurrentPage} />;
+      case 'staff':
+        return <StaffDashboard onPageChange={setCurrentPage} />;
       default:
         return <HomePage onPageChange={setCurrentPage} />;
     }
   };
 
-  const showNavigation = !['portal', 'dashboard'].includes(currentPage);
+  const showNavigation = !['portal', 'dashboard', 'staff'].includes(currentPage);
 
   return (
     <div className="min-h-screen bg-vevilo-dark text-white">

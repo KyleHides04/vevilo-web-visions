@@ -48,6 +48,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onPageChange }) =>
             >
               Client Portal
             </Button>
+            <Button 
+              onClick={() => onPageChange('staff')}
+              variant="outline"
+              className="border-vevilo-purple text-vevilo-magenta hover:bg-vevilo-purple/20"
+            >
+              Staff Dashboard
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,6 +94,16 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onPageChange }) =>
                 className="vevilo-gradient hover:opacity-90 transition-opacity w-fit"
               >
                 Client Portal
+              </Button>
+              <Button 
+                onClick={() => {
+                  onPageChange('staff');
+                  setIsMenuOpen(false);
+                }}
+                variant="outline"
+                className="border-vevilo-purple text-vevilo-magenta hover:bg-vevilo-purple/20 w-fit"
+              >
+                Staff Dashboard
               </Button>
             </div>
           </div>
